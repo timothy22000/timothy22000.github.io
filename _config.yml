@@ -1,2 +1,37 @@
-name: Timothy
+# lucas gatsas Theme/Blog - Jekyll Theme
+# the glas theme: https://github.com/SpaceG/glas
+# Author: LucasGatsas
+# Theme: glas
+# Source: https://github.com/spaceg/glas
+# Mail: space@lucasgatsas.ch
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Timothy Sum
+#What is the name of the events or talks you would like to host? (Example Brownbags, Talks, Lighting Talks)
+event_label: Events
+
+description: > # "
+  Timothy Sum, is a MSc Student that will be graduating this year and is currently working with the OWASP Foundation for the Google Summer of Code,
+  Back-End Engineer & Lover of Programming and Problem Solving. Living in London, United Kingdom.
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://timothy22000.github.io" # the base hostname & protocol for your site
+
+#These settings might be able to go?
+author: Timothy Sum
+twitter_username: timothy22000
+github_username:  timothy22000
+company_name: Student
+
+# Build settings
 markdown: kramdown
+
+#Have to show future posts for future events.
+future: true
+
+permalink: /event/:title.html
