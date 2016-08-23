@@ -17,12 +17,38 @@ The Open Web Application Security Project (OWASP) is a worldwide not-for-profit 
 AppSensor project defines a conceptual framework that provides a backbone to implementing application intrusion detection and automated response. My goal during my initial proposal is to extend and add a machine learning (ML) analysis engine to the AppSensor project. However, we decided to build an external system to conduct ML analysis on common web server logs to simulate the data processing that would happen in AppSensor as there were some requirements that the current AppSensor did not fulfill if we used Spark for streaming data processing and ML (such as being able to use a HDFS file system and others) during the community bonding period. This project is considered a standalone application separate from AppSensor at the moment and could grow into its own project that accepts any common log formats, runs ML algorithms (currently available in Spark MLib) and generates some rules. Besides that, the project started off as a proof of concept and is still currently in an experimental state as well as requiring more tests to be done. Therefore, it should be noted that it is not suitable for production usage yet.
 
 <h2 class="section-heading">Work Done</h2>
+This section will briefly cover what has been done overall during the summer period and milestones achieved. It is by no means a detailed record of every work that has been done (refer to the link for weekly meeting summaries below for that information).  
 
 <h3>Community Bonding Period</h3>
+For most of the community bonding period, I was working closely with my mentors (John, Juan, Giri) to solidify my project timeline plan. There was a lot of experimentation and looking into different technologies (such as InfluxDB, Kafka, Prometheus and others) in order to decide how we want to move forward with the project. It was truly interesting as there was no fixed tickets to close and we were learning together on how to approach this problem. Initially, we wanted to build the application within AppSensor itself but after some research (AppSensor lacked integrations for HDFS and Spark for now) we decided that I would develop a standalone application that will operate in a similar way to how AppSensor would by processing log files and conducting machine learning (ML) analysis. This approach allowed me to get the ball rolling earlier and familiarize myself with the technologies that I will be working with.
+
+Milestone Reached:
+<ol>
+<li>Experimented and Researched with different technologies to decide on the best approach for the project (being flexible to any changes along the way)</li>
+<li>Set up log management with Elasticsearch, Logstash and Kibana.</li>
+<li>Set up Kafka and connect it with Spark Streaming to complete the ML pipeline.</li>
+</ol>
 
 <h3>Coding Period Part 1 (Before Mid Terms)</h3>
+The first half of coding period was focused on getting results (good or bad) by running some ML algorithms on our data. Clustering algorithm - KMeans was chosen as the first ML algorithm as our dataset (apache log files) does not have any pre-determined class for a supervised algorithm to train on. Then, we can use the result for clustering to train a classification model to predict on future data as an additional step. Throughout this period, it was one of the most memorable period during GSoC as I learned the difficulties of data pre-processing to mould the data in the form that can be processed by ML algorithms as well as setting the parameters (ex: learning rate for StochasticGradientDescent) to obtain better results. From that experience, I was able to develop valuable skills as I gained a deeper understanding of the ML algorithms and optimizations done implicitly to allow it to work in the real world.
+
+Milestone Reached:
+<ol>
+<li>Learned about SparkSQL, RDD and Dataframes. Then, applying them on the dataset</li>
+<li>Implemented indexer, vectorizer and normalizers for feature extraction and transformation of our chosen features to able to run it in algorithms</li>
+<li>Implemented four different ML algorithms (clustering, logistic regression, naive bayes, decision trees) from SparkMLib</li>
+<li>Integrated the ML algorithms for our simple (one feature) and complex case (more than one feature)</li>
+</ol>
 
 <h3>Coding Period Part 2 </h3>
+The second half built on the work done in the first half of GSoC by generating rules from the results of the ML analysis and improving the results themselves. The rule suggestion work was my first stretch goal in the project timeline. There was also a lot of new things I picked up with regards to geocoding, latitude/longitude, timezones. We also thought about visualization our data to allow us to better understand the results and why the results are that way. This was noted down as a possible future work for this project. There was also suggestions by John that I should make the project a lot more accessible to people so they are more likely to contribute. The codebase is still not where I would like it to be yet as most of my efforts was focused on the getting the ML analysis and rule generation to work. I will definitely look forward to contributing and continue working on it during my free time after GSoC. I had less time during this period as I had my university placement and logbook to complete which took away some time from my beloved GSoC project.
+
+Milestone Reached:
+<ol>
+<li>Created rule generator for the results from any ML algorithms</li>
+<li>Created a script to generate artificial server log data to get some good examples and for testing of the ML analysis</li>
+<li>Created geocoder using Google Geocoding API and logstash's plugin to get lat/long as a feature</li>
+</ol>
 
 <h2 class="section-heading">Links</h2>
 Video Showing How to Use:
