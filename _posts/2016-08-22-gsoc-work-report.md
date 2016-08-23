@@ -30,6 +30,7 @@ Video Showing How to Use:
 
 Combined weekly meeting summaries and report to mailing lists:
 This document contains a more detailed record of what has been done including bugs and new learnings.
+
 <a href="https://docs.google.com/document/d/1XYFbZPX4EzFqaj9ViOkkZaBsC30peqDrmEXuZ1-DLwc/edit?usp=sharing">Weekly reports</a>
 
 Github Repo:
@@ -42,19 +43,21 @@ This project has only been worked on by me so far so the whole repository is my 
 <h2 class="section-heading">Future Work</h2>
 Even though most of the work that was planned has been completed during the GSoC period, there are still many improvements and extensions that can be made to the the project to make it a lot better and to get it past the experimental stage. This links to the importance of making the codebase simple to understand so that people are able to contribute easily.
 
-1) Extend to be able to take in other common web server log formats
-2) Extend to take in other features that exist in common web server log formats through any feature extraction or transformation necessary.
-3) Visualizing the why - ex: which settings to use for different algorithms (learning rate, etc), which ML algorithms to use
-4) Integration with AppSensor
-5) Deploying application in full cluster mode
-6) Improve rule generation step
-7) Add Travis CI to Github Repo
-8) Add Apache Zeppelin for visualization of data.
-9) Add REST API endpoints as an alternative way
-10) Add more tests as well as documentation
+<ol>
+<li>Extend to be able to take in other common web server log formats.</li>
+<li>Extend to take in other features that exist in common web server log formats through any feature extraction or transformation necessary.</li>
+<li>Visualizing the why - ex: which settings to use for different algorithms (learning rate, etc), which ML algorithms to use.</li>
+<li>Integration with AppSensor.</li>
+<li>Deploying application in full cluster mode.</li>
+<li>Improve rule generation step.</li>
+<li>Add Travis CI to Github Repo.</li>
+<li>Add Apache Zeppelin for visualization of data.</li>
+<li>Add REST API endpoints as an alternative way.</li>
+<li>Add more tests as well as documentation.</li>
+</ol>
 
 <h2 class="section-heading">Acknowledgements</h2>
 I'm indebted to John Melton for providing me with the opportunity to work on this amazing project. I would also like to express my gratitude to my mentors John, Juan, Giri for helping me through the duration of the projects and providing suggestions to any problems that I encounter.
 
 <h2 class="section-heading">Contact</h2>
-If you encounter any problems (I documented how to set up and run it but there could still be areas that are lacking) or you are interested in this project, please do contact me at timothy22000@gmail.com .
+If you encounter any problems (I documented how to set up and run it but there could still be areas that are lacking) or you are interested in this project, please do contact me at timothy22000@gmail.com.
