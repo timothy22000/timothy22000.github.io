@@ -10,7 +10,6 @@ date:   2016-08-22
 ---
 
 
-
 <h2 class="section-heading">Introduction</h2>
 
 The Open Web Application Security Project (OWASP) is a worldwide not-for-profit charitable organization focused on improving the security of software. The organization’s mission is to make software security visible, so that individuals and organizations are able to make informed decisions. OWASP is in a unique position to provide impartial, practical information about AppSec to individuals, corporations, universities, government agencies and other organizations worldwide.
