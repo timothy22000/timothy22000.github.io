@@ -52,9 +52,24 @@ Milestone Reached:
 <li>Created geocoder using Google Geocoding API and logstash's plugin to get lat/long as a feature</li>
 </ol>
 
-<h2 class="section-heading">Links</h2>
-Video Showing How to Use:
+<h2 class="section-heading">How to Use Quick Guide</h2>
+Set up your environment as described in the README.md of the <a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine">Github</a> repo. What you should see when using this application is that you can feed it an apache log file, it will pass through Logstash into Kafka then into Spark Streaming where ML analysis will be ran and rules will be generated. Here are the steps to use the application:
 
+<ol>
+    <li>
+    Start zookeeper. [/```
+    bin/zookeeper-server-start.sh config/zookeeper.properties
+    ```]
+    </li>
+    <li>
+    Start kafka. [/```
+    bin/kafka-server-start.sh config/server.properties
+    ```]
+    </li>
+    <li></li>
+</ol>
+
+<h2 class="section-heading">Links</h2>
 
 Combined weekly meeting summaries and report to mailing lists:
 This document contains a more detailed record of what has been done including bugs and new learnings.
@@ -66,7 +81,7 @@ This project has only been worked on by me so far so the whole repository is my 
 
 <a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine">Source Repo</a>
 
-<a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine/commits/master">Commits</a>
+<a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine/commits/master">Commits</a> <p>(Last Commit: Aug 23, 2016 - Merging dev into master)</p>
 
 <h2 class="section-heading">Future Work</h2>
 Even though most of the work that was planned has been completed during the GSoC period, there are still many improvements and extensions that can be made to the the project to make it a lot better and to get it past the experimental stage. This links to the importance of making the codebase simple to understand so that people are able to contribute easily.
