@@ -6,6 +6,8 @@ title:  "GSoC 2016 Work Report"
 cover: "img/clode.jpg"
 date:   2016-08-22
 
+organizer: "Timothy Sum"
+
 
 ---
 
@@ -72,7 +74,7 @@ Even though most of the work that was planned has been completed during the GSoC
 <ol>
 <li>Extend to be able to take in other common web server log formats.</li>
 <li>Extend to take in other features that exist in common web server log formats through any feature extraction or transformation necessary.</li>
-<li>Visualizing the why - ex: which settings to use for different algorithms (learning rate, etc), which ML algorithms to use.</li>
+<li>Visualizing the why. Ex: which settings to use for different algorithms (learning rate, etc), which ML algorithms to use.</li>
 <li>Integration with AppSensor.</li>
 <li>Deploying application in full cluster mode.</li>
 <li>Improve rule generation step.</li>
