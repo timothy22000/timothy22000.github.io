@@ -58,28 +58,28 @@ Set up your environment as described in the README.md of the <a href="https://gi
 <ol>
     <li>
     Start Zookeeper.
-    ```bin/zookeeper-server-start.sh config/zookeeper.properties```
+    <code>bin/zookeeper-server-start.sh config/zookeeper.properties</code>
     </li>
     <li>
     Start Kafka.
-    ```bin/kafka-server-start.sh config/server.properties```
+    <code>bin/kafka-server-start.sh config/server.properties</code>
     </li>
     Create your kafka topic. (I called it logstash_logs in my base)
-    ```bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic logstash_logs```
+    <code>bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic logstash_logs</code>
     <li>
     Start logstash with your configurations (pointing to which folder, etc)
-    ```logstash -f /etc/logstash/conf.d/file_to_kafka.conf --auto-reload```
+    `<code>logstash -f /etc/logstash/conf.d/file_to_kafka.conf --auto-reload</code>
     </li>
     <li>
     Start the application itself either by running in an IDE (Main.class) or through spark-submit with your desired parameters.
     </li>
     <li>
     Create, copy or move a log file of your choice into the folder that you set for Logstash to listen.
-    (You use the script in the ```src/main/resources/scripts folder``` to generate artifical logfiles.)
+    (You use the script in the <code>src/main/resources/scripts folder</code> to generate artifical logfiles.)
     </li>
     <li>
     Wait for the application to complete its analysis and the output files are generated under
-    ```src/main/resources/output``` by default.
+    <code>src/main/resources/output</code> by default.
     </li>
 </ol>
 
