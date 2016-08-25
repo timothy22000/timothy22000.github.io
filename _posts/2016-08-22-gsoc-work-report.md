@@ -53,20 +53,34 @@ Milestone Reached:
 </ol>
 
 <h2 class="section-heading">How to Use Quick Guide</h2>
-Set up your environment as described in the README.md of the <a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine">Github</a> repo. What you should see when using this application is that you can feed it an apache log file, it will pass through Logstash into Kafka then into Spark Streaming where ML analysis will be ran and rules will be generated. Here are the steps to use the application:
+Set up your environment as described in the README.md of the <a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine">Github</a> repo. Config file settings and dependencies required are also described there. What you should see when using this application is that you can feed it an apache log file, it will pass through Logstash into Kafka then into Spark Streaming where ML analysis will be ran and rules will be generated. Here are the steps to use the application:
 
 <ol>
     <li>
-    Start zookeeper. [/```
-    bin/zookeeper-server-start.sh config/zookeeper.properties
-    ```]
+    Start Zookeeper.
+    ```bin/zookeeper-server-start.sh config/zookeeper.properties```
     </li>
     <li>
-    Start kafka. [/```
-    bin/kafka-server-start.sh config/server.properties
-    ```]
+    Start Kafka.
+    ```bin/kafka-server-start.sh config/server.properties```
     </li>
-    <li></li>
+    Create your kafka topic. (I called it logstash_logs in my base)
+    ```bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic logstash_logs```
+    <li>
+    Start logstash with your configurations (pointing to which folder, etc)
+    ```logstash -f /etc/logstash/conf.d/file_to_kafka.conf --auto-reload```
+    </li>
+    <li>
+    Start the application itself either by running in an IDE (Main.class) or through spark-submit with your desired parameters.
+    </li>
+    <li>
+    Create, copy or move a log file of your choice into the folder that you set for Logstash to listen.
+    (You use the script in the ```src/main/resources/scripts folder``` to generate artifical logfiles.)
+    </li>
+    <li>
+    Wait for the application to complete its analysis and the output files are generated under
+    ```src/main/resources/output``` by default.
+    </li>
 </ol>
 
 <h2 class="section-heading">Links</h2>
@@ -81,7 +95,7 @@ This project has only been worked on by me so far so the whole repository is my 
 
 <a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine">Source Repo</a>
 
-<a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine/commits/master">Commits</a> <p>(Last Commit: Aug 23, 2016 - Merging dev into master)</p>
+<a href="https://github.com/timothy22000/GSoC-MLAnalysisEngine/commits/master">Commits</a> (Last Commit: Aug 23, 2016 - Merging dev into master)
 
 <h2 class="section-heading">Future Work</h2>
 Even though most of the work that was planned has been completed during the GSoC period, there are still many improvements and extensions that can be made to the the project to make it a lot better and to get it past the experimental stage. This links to the importance of making the codebase simple to understand so that people are able to contribute easily.
