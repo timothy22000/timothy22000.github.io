@@ -5,7 +5,7 @@ Preview: http://www.blog.lucasgatsas.ch
 
 
 <code>cd Desktop </code><br>
-<code>cd glas </code><br>
+<code>cd [Folder Name] </code><br>
 <code>$ jekyll serve </code>
 
 watch your localhost <code> 127.0.0.1:8080 </code>
